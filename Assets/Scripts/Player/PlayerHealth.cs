@@ -9,18 +9,31 @@ namespace Player
     /// </summary>
     public class PlayerHealth : MonoBehaviour
     {
+        public static event Action<int, int> OnHealthChanged;
+
         [SerializeField] private int maxHealth = 5;
-        
+
         private int currentHealth;
+
+        private void Awake()
+        {
+            currentHealth = maxHealth;
+        }
 
         private void Start()
         {
-            currentHealth = maxHealth;
+            InvokeHealthChanged();
         }
 
         public void TakeDamage(int damage)
         {
             currentHealth -= damage;
+            InvokeHealthChanged();
+        }
+
+        private void InvokeHealthChanged()
+        {
+            OnHealthChanged?.Invoke(currentHealth, maxHealth);
             if (currentHealth <= 0)
             {
                 LevelManager.Instance.Lose();

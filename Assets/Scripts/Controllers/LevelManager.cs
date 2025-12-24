@@ -38,7 +38,7 @@ namespace Controllers
             Instance = this;
         }
 
-        void Start()
+        private void Start()
         {
             TallyAllCoinsAndKeysInLevel();
             Initialized = true;

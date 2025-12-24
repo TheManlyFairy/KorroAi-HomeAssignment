@@ -3728,11 +3728,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!4 &231096827 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7194090279822998780, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
-  m_PrefabInstance: {fileID: 4080495821692718429}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &269214859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9951,53 +9946,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &2136682530
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2136682531}
-  - component: {fileID: 2136682532}
-  m_Layer: 0
-  m_Name: UIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2136682531
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136682530}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 231096827}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2136682532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136682530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c6163ccbfc846deb0d445a30155c2c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealthText: {fileID: 1538139273}
-  coinsCollectedText: {fileID: 12154413}
-  keysCollectedText: {fileID: 999494379}
 --- !u!1001 &1523978192095185491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10144,17 +10092,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5701289084079440789, guid: 98933c22a8b081e49977516e151ec876, type: 3}
   m_PrefabInstance: {fileID: 1523978192095185491}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1523978192095185495 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6532407197476112247, guid: 98933c22a8b081e49977516e151ec876, type: 3}
-  m_PrefabInstance: {fileID: 1523978192095185491}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23ffe009c87c47da94b00253a818232c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2244234058173473031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10224,6 +10161,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManagers
       objectReference: {fileID: 0}
+    - target: {fileID: 409755970669734030, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
+      propertyPath: playerHealthText
+      value: 
+      objectReference: {fileID: 1538139273}
+    - target: {fileID: 409755970669734030, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
+      propertyPath: keysCollectedText
+      value: 
+      objectReference: {fileID: 999494379}
+    - target: {fileID: 409755970669734030, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
+      propertyPath: coinsCollectedText
+      value: 
+      objectReference: {fileID: 12154413}
     - target: {fileID: 7194090279822998780, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8279538
@@ -10264,40 +10213,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9029331670373027319, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
-      propertyPath: OnAllKeysCollected.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9029331670373027319, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
-      propertyPath: OnAllKeysCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9029331670373027319, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
-      propertyPath: OnAllKeysCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1523978192095185495}
-    - target: {fileID: 9029331670373027319, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
-      propertyPath: OnAllKeysCollected.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9029331670373027319, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
-      propertyPath: OnAllKeysCollected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TriggerDoorOpenAnimation
-      objectReference: {fileID: 0}
-    - target: {fileID: 9029331670373027319, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
-      propertyPath: OnAllKeysCollected.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Interactables.DoorAnimator, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 9029331670373027319, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
-      propertyPath: OnAllKeysCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7194090279822998780, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2136682531}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
 --- !u!1001 &6040221623171590162
