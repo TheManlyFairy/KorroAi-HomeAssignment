@@ -75,12 +75,13 @@ namespace Controllers
 
         public void Victory()
         {
-            SceneManager.LoadSceneAsync("MainMenu");
+            SceneManager.LoadScene("MainMenu");
         }
 
         public void Lose()
         {
-            
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentSceneName);
         }
     }
 }

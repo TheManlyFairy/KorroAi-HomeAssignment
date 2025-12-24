@@ -1,3 +1,4 @@
+using System;
 using Controllers;
 using UnityEngine;
 
@@ -11,6 +12,11 @@ namespace Player
         [SerializeField] private int maxHealth = 5;
         
         private int currentHealth;
+
+        private void Start()
+        {
+            currentHealth = maxHealth;
+        }
 
         public void TakeDamage(int damage)
         {

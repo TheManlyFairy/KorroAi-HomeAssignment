@@ -928,11 +928,11 @@ GameObject:
   - component: {fileID: 1639831025916891162}
   - component: {fileID: 4372141243008412658}
   - component: {fileID: 6384079458740219539}
+  - component: {fileID: 8007811639289072122}
   - component: {fileID: 629986694282918450}
-  - component: {fileID: 4270651612065043125}
   m_Layer: 6
   m_Name: Mannequin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1129,6 +1129,19 @@ MonoBehaviour:
   animBoolIsRunning: IsRunning
   animTriggerJump: Jump
   animTriggerHit: Hit
+--- !u!114 &8007811639289072122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3743996805154880320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f0bc65e43a81342bc8f61b7c6f4810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
 --- !u!114 &629986694282918450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1141,8 +1154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3f1c8705f845598bab38279a1b3bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trapGraceTime: 1.5
-  OnHitTrap:
+  damageGraceTime: 1.5
+  OnDamageTaken:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6384079458740219539}
@@ -1157,33 +1170,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!54 &4270651612065043125
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3743996805154880320}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+      - m_Target: {fileID: 8007811639289072122}
+        m_TargetAssemblyTypeName: Player.PlayerHealth, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3753309663730406161
 GameObject:
   m_ObjectHideFlags: 0

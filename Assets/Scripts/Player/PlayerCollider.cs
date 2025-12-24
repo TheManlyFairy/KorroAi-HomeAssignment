@@ -10,7 +10,7 @@ namespace Player
     /// </summary>
     public class PlayerCollider : MonoBehaviour
     {
-        [SerializeField] private float trapGraceTime = 0.5f;
+        [SerializeField] private float damageGraceTime = 0.5f;
         
         [SerializeField] private UnityEvent<int> OnDamageTaken;
         
@@ -19,7 +19,7 @@ namespace Player
         
         private void Start()
         {
-            trapGraceWait = new WaitForSeconds(trapGraceTime);
+            trapGraceWait = new WaitForSeconds(damageGraceTime);
         }
         
         private void OnControllerColliderHit(ControllerColliderHit hit)
