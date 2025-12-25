@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Controllers;
 using UnityEngine;
@@ -71,6 +72,12 @@ namespace Player
             RotateView();
             Move();
             Jump();
+        }
+
+        private void OnDestroy()
+        {
+            TimelineManager.OnPlay -= DisableInput;
+            TimelineManager.OnEnd -= EnableInput;
         }
 
         #endregion
