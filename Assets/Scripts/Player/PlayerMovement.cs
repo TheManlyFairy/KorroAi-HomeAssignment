@@ -1,6 +1,8 @@
 using System.Collections;
+using Controllers;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using CallbackContext = UnityEngine.InputSystem.InputAction.CallbackContext;
 
 namespace Player
@@ -10,11 +12,15 @@ namespace Player
     /// </summary>
     public class PlayerMovement : MonoBehaviour
     {
+        private const string MANNEQUIN_ACTIONS = "MannequinActions";
+        private const string EMPTY_ACTIONS = "Empty";
+        
         [Header("Local References")] 
         [SerializeField] private Transform cameraTransform;
         [SerializeField] private Transform groundedCheckTransform;
         [SerializeField] private Animator animator;
- 
+        [SerializeField] private PlayerInput playerInput;
+        
         [Header("Movement")] 
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private float jumpHeight = 0.35f;
@@ -45,7 +51,12 @@ namespace Player
         private float cameraRotation;
         
         #region Unity Lifecycle
-        
+
+        private void Awake()
+        {
+            TimelineManager.OnPlay += DisableInput;
+            TimelineManager.OnEnd += EnableInput;
+        }
         private void Start()
         {
             jumpGraceWait = new WaitForSeconds(groundCheckGraceTime);
@@ -61,12 +72,23 @@ namespace Player
 
         #endregion
         
-                private void InitializeInputActions()
+        #region Initialization
+
+        private void DisableInput()
+        {
+            playerInput.SwitchCurrentActionMap(EMPTY_ACTIONS);
+        }
+
+        private void EnableInput()
+        {
+            playerInput.SwitchCurrentActionMap(MANNEQUIN_ACTIONS);
+        }
+        private void InitializeInputActions()
         {
             playerController = GetComponent<CharacterController>();
             cameraRotation = cameraTransform.localRotation.eulerAngles.y;
         }
-
+#endregion
         #region Input Callbacks
 
         public void OnJump(CallbackContext context)
