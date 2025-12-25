@@ -1082,6 +1082,7 @@ GameObject:
   - component: {fileID: 4372141243008412658}
   - component: {fileID: 6384079458740219539}
   - component: {fileID: 8007811639289072122}
+  - component: {fileID: 7716029013683231374}
   - component: {fileID: 629986694282918450}
   m_Layer: 6
   m_Name: Mannequin
@@ -1296,6 +1297,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+--- !u!114 &7716029013683231374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3743996805154880320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb414bafe9e45d8816de17e3e3bc91f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageTakenSoundEffect: {fileID: 8300000, guid: 4ee9406699d137d41974a1acbbb8e361, type: 3}
 --- !u!114 &629986694282918450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1328,6 +1342,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Player.PlayerHealth, Assembly-CSharp
         m_MethodName: TakeDamage
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7716029013683231374}
+        m_TargetAssemblyTypeName: Player.PlayerAudio, Assembly-CSharp
+        m_MethodName: PlayDamageTakenSoundEffect
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -13,6 +13,10 @@ namespace Player
         [SerializeField] private string animTriggerJump;
         [SerializeField] private string animTriggerHit;
 
+        /// <summary>
+        /// Triggers the players idle or move animations. Changes depend on player input.
+        /// </summary>
+        /// <param name="context">Player input context.</param>
         public void TriggerWalkOrIdleAnimation(CallbackContext context)
         {
             Vector2 moveInput = context.ReadValue<Vector2>();
@@ -20,11 +24,17 @@ namespace Player
             animator.SetBool(animBoolIsRunning, isRunning);
         }
 
+        /// <summary>
+        /// Triggers the player's jump animation.
+        /// </summary>
         public void TriggerJumpAnimation()
         {
             animator.SetTrigger(animTriggerJump);
         }
         
+        /// <summary>
+        /// Triggers the player's hit reaction animation.
+        /// </summary>
         public void TriggerHitReactionAnimation()
         {
             animator.SetTrigger(animTriggerHit);

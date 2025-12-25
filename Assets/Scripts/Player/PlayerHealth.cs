@@ -25,6 +25,10 @@ namespace Player
             InvokeHealthChanged();
         }
 
+        /// <summary>
+        /// Reduces the player's health by a given amount.
+        /// </summary>
+        /// <param name="damage">Amount of damage the player will take.</param>
         public void TakeDamage(int damage)
         {
             currentHealth -= damage;

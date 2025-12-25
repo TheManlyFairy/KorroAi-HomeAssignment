@@ -9,14 +9,24 @@ namespace Controllers
     /// Manager class for handling playing timeline animations within a level
     /// </summary>
     public class TimelineManager : MonoBehaviour
-    {       
+    {
+        /// <summary>
+        /// The singleton instance of this manager.
+        /// </summary>
         public static TimelineManager Instance { get; private set; }
 
         [SerializeField] private PlayableDirector playableDirector;
 
+        /// <summary>
+        /// Subscribe to this event to know when a timeline animation started playing.
+        /// </summary>
         public static event Action OnPlay;
+
+        /// <summary>
+        /// Subscribe to this event to know when a timeline animation ended playing.
+        ///</summary>
         public static event Action OnEnd;
-        
+
         private void Awake()
         {
             if (Instance != null)
@@ -32,6 +42,7 @@ namespace Controllers
         {
             StartCoroutine(PlayIntroAnimation());
         }
+
         private IEnumerator PlayIntroAnimation()
         {
             OnPlay?.Invoke();

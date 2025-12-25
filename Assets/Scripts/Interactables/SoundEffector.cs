@@ -11,6 +11,10 @@ namespace Interactables
     {
         private AudioSource audioSource;
 
+        /// <summary>
+        /// Plays the given clip and destroys self when audio ends.
+        /// </summary>
+        /// <param name="clip">The audio clip to play.</param>
         public void PlayClip(AudioClip clip)
         {
             StartCoroutine(PlayOneShop(clip));

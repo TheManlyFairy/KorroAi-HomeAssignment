@@ -38,6 +38,9 @@ namespace Player
         [SerializeField] private float rotationSpeed = 5f;
         [Range(0f, 1f)] [SerializeField] private float sensitivity = 1f;
 
+        /// <summary>
+        /// Subscribe to this event to know when an actual jump has been performed by the player.
+        /// </summary>
         public UnityEvent OnJumpPerformed;
         
         private CharacterController playerController;
@@ -89,8 +92,13 @@ namespace Player
             cameraRotation = cameraTransform.localRotation.eulerAngles.y;
         }
 #endregion
+
         #region Input Callbacks
 
+        /// <summary>
+        /// Callback method for when a jump input is received.
+        /// </summary>
+        /// <param name="context">Input context.</param>
         public void OnJump(CallbackContext context)
         {
             if (context.performed == false || isGroundedCheck == false)
@@ -101,11 +109,19 @@ namespace Player
             jumpPressed = true;
         }
 
+        /// <summary>
+        /// Callback method for when a movement input is received.
+        /// </summary>
+        /// <param name="context">Input context.</param>
         public void OnMove(CallbackContext context)
         {
             moveInput = context.ReadValue<Vector2>();
         }
 
+        /// <summary>
+        /// Callback method for when a rotation input is received.
+        /// </summary>
+        /// <param name="context">Input context.</param>
         public void OnRotateView(CallbackContext context)
         {
             rotateViewInput = context.ReadValue<Vector2>();
@@ -154,7 +170,7 @@ namespace Player
 
         private void CheckIsGrounded()
         {
-            if (isWaitingJumpGrace)
+            if (isWaitingJumpGrace) // Disable ground checks for a short duration after a jump to ensure ground checks don't happen as the player is ascending.
             {
                 return;
             }

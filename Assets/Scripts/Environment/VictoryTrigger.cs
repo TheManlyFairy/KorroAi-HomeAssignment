@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Interactables
 {
+    /// <summary>
+    /// Script for detecting player reaching the victory trigger zone.
+    /// </summary>
     public class VictoryTrigger : MonoBehaviour
     {
         private void OnTriggerEnter(Collider other)

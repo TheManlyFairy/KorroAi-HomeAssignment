@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Interactables
 {
+    /// <summary>
+    /// Component for animation the doorway opening when all keys are collected.
+    /// </summary>
     [RequireComponent(typeof(Animator))]
     public class DoorAnimator : MonoBehaviour
     {
@@ -11,7 +14,7 @@ namespace Interactables
             LevelManager.Instance.OnAllKeysCollected += TriggerDoorOpenAnimation;
         }
 
-        public void TriggerDoorOpenAnimation()
+        private void TriggerDoorOpenAnimation()
         {
             GetComponent<Animator>().SetTrigger("Open");
         }

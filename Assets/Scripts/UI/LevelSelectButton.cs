@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using Models.ScriptableObjects;
+﻿using Models.ScriptableObjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,6 +14,10 @@ namespace UI
     {
         [SerializeField] private TMP_Text levelNameText;
         
+        /// <summary>
+        /// Sets the <see cref="SceneSelectionData"/> with this button.
+        /// </summary>
+        /// <param name="data">Scene selection data to use if this button is pressed.</param>
         public void SetSceneData(SceneSelectionData data)
         {
             levelNameText.text = data.SceneDisplayName;
