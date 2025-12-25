@@ -1,4 +1,6 @@
-﻿using Models;
+﻿using System;
+using Models;
+using Player;
 using TMPro;
 using UnityEngine;
 
@@ -19,6 +21,12 @@ namespace Controllers
         /// </summary>
         private LevelData LevelData => LevelManager.Instance?.LevelData;
 
+        private void Awake()
+        {
+            PlayerHealth.OnHealthChanged += UpdateHealth;
+        }
+
+
         private void Start()
         {
             if (LevelData != null)
@@ -31,6 +39,11 @@ namespace Controllers
             }
         }
 
+        private void OnDestroy()
+        {
+            PlayerHealth.OnHealthChanged -= UpdateHealth;
+        }
+
         private void SubscribeToUpdates()
         {
             LevelManager.Instance.OnInitializationComplete -= SubscribeToUpdates;
@@ -40,6 +53,10 @@ namespace Controllers
             UpdateKeys(0);
         }
 
+        private void UpdateHealth(int currentHealth, int maxHealth)
+        {
+            playerHealthText.text = string.Format(HEALTH_STRING_FORMAT, currentHealth, maxHealth);
+        }
 
         private void UpdateCoins(int currentCoins)
         {
