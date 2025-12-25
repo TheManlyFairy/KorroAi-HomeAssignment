@@ -8,9 +8,10 @@ namespace UI
     /// </summary>
     public class LevelSelector : MonoBehaviour
     {
+        private const string LEVELS_RESOURCES_PATH = "LevelData";
+        
         [SerializeField] private RectTransform levelButtonsLayoutParent;
         [SerializeField] private LevelSelectButton levelButtonPrefab;
-        [SerializeField] private SceneSelectionData[] levels;
 
         private void Start()
         {
@@ -18,7 +19,8 @@ namespace UI
         }
         private void GenerateLevelButtons()
         {
-            foreach (SceneSelectionData levelData in levels)
+            SceneSelectionData[] allLevels = Resources.LoadAll<SceneSelectionData>(LEVELS_RESOURCES_PATH);
+            foreach (SceneSelectionData levelData in allLevels)
             {
                 LevelSelectButton levelButton = Instantiate(levelButtonPrefab, levelButtonsLayoutParent);
                 levelButton.SetSceneData(levelData);
