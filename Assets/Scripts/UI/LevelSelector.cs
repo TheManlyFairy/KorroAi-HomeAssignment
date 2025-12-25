@@ -1,5 +1,4 @@
-﻿using Models;
-using Models.ScriptableObjects;
+﻿using Models.ScriptableObjects;
 using UnityEngine;
 
 namespace UI

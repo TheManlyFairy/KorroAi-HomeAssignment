@@ -8,6 +8,9 @@ namespace Controllers
     /// </summary>
     public class AudioManager : MonoBehaviour
     {
+        /// <summary>
+        /// The singleton instance of this manager.
+        /// </summary>
         public static AudioManager Instance { get; private set; }
 
         [SerializeField] protected SoundEffector soundEffectorPrefab;
@@ -23,6 +26,10 @@ namespace Controllers
             Instance = this;
         }
         
+        /// <summary>
+        /// Creates an instance of a <see cref="SoundEffector"/> that plays a clip.
+        /// </summary>
+        /// <param name="clip">The clip to be played by the effector.</param>
         public void PlaySoundEffect(AudioClip clip)
         {
             if (clip == null)

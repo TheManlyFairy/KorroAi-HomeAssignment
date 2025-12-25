@@ -10,6 +10,9 @@ namespace Player
     {
         [SerializeField] private AudioClip damageTakenSoundEffect;
 
+        /// <summary>
+        /// Plays the damage taken sound effect.
+        /// </summary>
         public void PlayDamageTakenSoundEffect()
         {
             AudioManager.Instance.PlaySoundEffect(damageTakenSoundEffect);

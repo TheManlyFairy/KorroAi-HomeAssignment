@@ -11,17 +11,17 @@ namespace Player
     public class PlayerCollider : MonoBehaviour
     {
         [SerializeField] private float damageGraceTime = 0.5f;
-        
+
         [SerializeField] private UnityEvent<int> OnDamageTaken;
-        
+
         private WaitForSeconds trapGraceWait;
         private bool isWaitingTrapGrace;
-        
+
         private void Start()
         {
             trapGraceWait = new WaitForSeconds(damageGraceTime);
         }
-        
+
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
             CheckForTraps(hit);
@@ -33,16 +33,17 @@ namespace Player
             {
                 return;
             }
-            
+
             Trap trap = hit.collider.GetComponent<Trap>();
             if (trap == null)
             {
                 return;
             }
+
             OnDamageTaken?.Invoke(trap.Damage);
             StartCoroutine(WaitForTrapGrace());
-
         }
+
         private IEnumerator WaitForTrapGrace()
         {
             isWaitingTrapGrace = true;
