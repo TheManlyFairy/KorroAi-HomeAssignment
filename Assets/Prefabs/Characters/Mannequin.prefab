@@ -1238,6 +1238,7 @@ MonoBehaviour:
   cameraTransform: {fileID: 3729058387967250044}
   groundedCheckTransform: {fileID: 7614875634443688771}
   animator: {fileID: 380926874016509919}
+  playerInput: {fileID: 1639831025916891162}
   moveSpeed: 5
   jumpHeight: 0.35
   gravity: -9.81

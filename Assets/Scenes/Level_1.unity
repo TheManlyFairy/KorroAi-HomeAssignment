@@ -10241,7 +10241,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: f425d4cae4533de499213be11d329173, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -10494,6 +10494,10 @@ PrefabInstance:
       propertyPath: coinsCollectedText
       value: 
       objectReference: {fileID: 12154413}
+    - target: {fileID: 7185023461575368203, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
+      propertyPath: playableDirector
+      value: 
+      objectReference: {fileID: 2006869294}
     - target: {fileID: 7194090279822998780, guid: cac5178dc1586744b954c20814d2b86f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8279538
